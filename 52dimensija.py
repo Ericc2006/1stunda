@@ -20,9 +20,13 @@ while x < 2 or x > 20:
 saraksts = [[None] * x for i in range (x)]
 print(saraksts)
 
-# for i in range(x):
-#     for j in range(x):
-#         saraksts[i][j] = random.randint(0,9)
+for i in range(x):
+    for j in range(x):
+        saraksts[i][j] = random.randint(0,9)
 
-# print (saraksts)
+print (saraksts)
+
+for m in saraksts:
+    for u in m:
+        print (u, end =" ")
 
