@@ -13,9 +13,9 @@ x = 0
 while x < 2 or x > 20:
     x = int(input("ievada x vērtību no 2 līdz 20 = "))
     if x < 2:
-        print ("nepareiz ievadīts x jābūit lielākam par 1 un mazākam par 20")
+        print ("nepareiz ievadīts x jābūt lielākam par 1 un mazākam par 20")
     if x > 20:
-        print ("nepareiz ievadīts x jābūit lielākam par 1 un mazākam par 20")
+        print ("nepareiz ievadīts x jābūt lielākam par 1 un mazākam par 20")
 
 saraksts = [[None] * x for i in range (x)]
 print(saraksts)
@@ -29,4 +29,10 @@ print (saraksts)
 for m in saraksts:
     for u in m:
         print (u, end =" ")
+    print()
+
+sum = 0
+
+for i in range(x):
+    sum = sum + saraksts[i][i]
 
