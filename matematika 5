@@ -1,0 +1,18 @@
+# Importējam nepieciešamās bibliotēkas
+from sympy import Symbol, Eq, solve
+
+# Ievada nepieciešamās vērtības
+a = float(input("Ievadi a vērtību: "))
+b = float(input("Ievadi b vērtību: "))
+
+# Izveidojam simbolisko mainīgo x
+x = Symbol('x')
+
+# Izveidojam vienādojumu
+eq = Eq(a * x + b, 0)
+
+# Risinām vienādojumu
+solution = solve(eq, x)
+
+# Izvadam rezultātu
+print("x =", solution)
