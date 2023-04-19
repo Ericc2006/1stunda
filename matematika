@@ -1,0 +1,48 @@
+# Importējam nepieciešamās bibliotēkas
+from sympy import Symbol, Eq, solve
+
+# Izvēlamies kvadrātvienādojuma veidu
+print("Izvēlies kvadrātvienādojuma veidu:")
+print("1. ax^2 + bx + c = 0")
+print("2. p^2 - q = 0")
+choice = int(input("Ievadi izvēles numuru: "))
+
+if choice == 1:
+    # Ievada nepieciešamās vērtības
+    a = float(input("Ievadi a vērtību: "))
+    b = float(input("Ievadi b vērtību: "))
+    c = float(input("Ievadi c vērtību: "))
+
+    # Izveidojam simboliskos mainīgos x
+    x1 = Symbol('x1')
+    x2 = Symbol('x2')
+
+    # Izveidojam kvadrātvienādojumu
+    eq = Eq(a * x1**2 + b * x1 + c, 0)
+
+    # Risinām kvadrātvienādojumu
+    solutions = solve(eq, x1)
+
+    # Izvadam rezultātus
+    print("x1 =", solutions[0])
+    print("x2 =", solutions[1])
+
+elif choice == 2:
+    # Ievada nepieciešamās vērtības
+    p = float(input("Ievadi p vērtību: "))
+    q = float(input("Ievadi q vērtību: "))
+
+    # Izveidojam simbolisko mainīgo x
+    x = Symbol('x')
+
+    # Izveidojam kvadrātvienādojumu
+    eq = Eq(p**2 - q, 0)
+
+    # Risinām kvadrātvienādojumu
+    solution = solve(eq, x)
+
+    # Izvadam rezultātu
+    print("x =", solution)
+
+else:
+    print("Nepareiza izvēle!")
