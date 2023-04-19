@@ -1,0 +1,15 @@
+Uzdevums: 5 * 1, Ievad�t� atbilde: 5, Pareiz� atbilde: 5
+Uzdevums: 9 - 6, Ievad�t� atbilde: 3, Pareiz� atbilde: 3
+Uzdevums: 2 + 9, Ievad�t� atbilde: 11, Pareiz� atbilde: 11
+Uzdevums: 4 - 7, Ievad�t� atbilde: -3, Pareiz� atbilde: -3
+Uzdevums: 9 - 9, Ievad�t� atbilde: 0, Pareiz� atbilde: 0
+Uzdevums: 4 + 3, Ievadītā atbilde: 7, Pareizā atbilde: 7
+Uzdevums: 6 * 8, Ievadītā atbilde: 1, Pareizā atbilde: 48
+Uzdevums: 6 * 4, Ievadītā atbilde: 24, Pareizā atbilde: 24
+Uzdevums: 5 * 3, Ievadītā atbilde: 15, Pareizā atbilde: 15
+Uzdevums: 3 - 10, Ievadītā atbilde: -7, Pareizā atbilde: -7
+Uzdevums: 4 + 3, Ievadītā atbilde: 7, Pareizā atbilde: 7
+Uzdevums: 3 * 8, Ievadītā atbilde: 24, Pareizā atbilde: 24
+Uzdevums: 35 + 19, Ievadītā atbilde: 54, Pareizā atbilde: 54
+Uzdevums: 18 - 14, Ievadītā atbilde: 4, Pareizā atbilde: 4
+Uzdevums: 48 - 19, Ievadītā atbilde: 4, Pareizā atbilde: 29
