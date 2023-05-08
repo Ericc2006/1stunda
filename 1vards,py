@@ -1,0 +1,53 @@
+# Šī ir spēle, kurā spēlētājam ir jāmin vārds, kas ir izvēlēts no vārdnīcas.
+
+import random
+
+# Izveidojam vārdnīcu ar vārdiem.
+dictionary = ["maize", "piens", "siers", "olas", "kartupeļi", "banāni", "apelsīni", "pipari", "burkāni", "mandeles"]
+
+# Izvēlamies gadījuma vārdu no vārdnīcas.
+word = random.choice(dictionary)
+
+# Sagatavojam mainīgo "hidden", lai to aizpildītu ar "_".
+hidden = ""
+for letter in word:
+    hidden += "_"
+
+print("Uzminiet vārdu! Vārds sastāv no", len(word), "burtiem.")
+print(hidden)
+
+# Izveidojam sarakstu ar jau ievadītajiem burtiem.
+guessed_letters = []
+
+# Cikls, kas turpinās, kamēr spēlētājs uzmin vārdu vai izmanto visas mēģinājumu iespējas.
+remaining_guesses = 6
+while hidden != word and remaining_guesses > 0:
+    # Ievada spēlētāja minējumu.
+    guess = input("Ievadiet burtu: ").lower()
+
+    # Ja spēlētājs jau minēja šo burtu, informējam par to.
+    if guess in guessed_letters:
+        print("Jūs jau minējāt šo burtu. Mēģiniet vēlreiz!")
+    else:
+        # Ja burts ir vārdā, atklājam to.
+        if guess in word:
+            for i in range(len(word)):
+                if word[i] == guess:
+                    hidden = hidden[:i] + guess + hidden[i+1:]
+            print("Labi padarīts! Jums izdevās uzminēt burtu.")
+        else:
+            print("Diemžēl šis burts nav vārdā. Mēģiniet vēlreiz!")
+            remaining_guesses -= 1
+
+        # Pievienojam minēto burtu sarakstam.
+        guessed_letters.append(guess)
+
+        # Parādam pašreizējo stāvokli spēlē.
+        print(hidden)
+        print("Jums palika", remaining_guesses, "mēģinājumi.")
+
+# Ja spēlētājs uzminēja vārdu, parādām apsveikumu.
+if hidden == word:
+    print("Apsveicam! Jūs uzminējāt vārdu -", word, "!")
+else:
+    print("Diemžēl jums beidzās mēģinājumi. Vārds bija -", word, ".")
