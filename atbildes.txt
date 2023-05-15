@@ -13,3 +13,7 @@ Uzdevums: 3 * 8, Ievadītā atbilde: 24, Pareizā atbilde: 24
 Uzdevums: 35 + 19, Ievadītā atbilde: 54, Pareizā atbilde: 54
 Uzdevums: 18 - 14, Ievadītā atbilde: 4, Pareizā atbilde: 4
 Uzdevums: 48 - 19, Ievadītā atbilde: 4, Pareizā atbilde: 29
+Uzdevums: 7 + 6, Ievadītā atbilde: 14, Pareizā atbilde: 13
+Uzdevums: 2 + 3, Ievadītā atbilde: 5, Pareizā atbilde: 5
+Uzdevums: 5 * 6, Ievadītā atbilde: 30, Pareizā atbilde: 30
+Uzdevums: 4 * 6, Ievadītā atbilde: 25, Pareizā atbilde: 24
