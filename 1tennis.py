@@ -4,18 +4,18 @@ import sys
 # b8
 screen_width = 640
 screen_height = 480
-field_width = 600
-field_height = 400
-ball_size = 20
-paddle_width = 10
-paddle_height = 60
-paddle_speed = 5
-ball_speed_x = 5
-ball_speed_y = 5
+field_width = 640
+field_height = 480
+ball_size = 25
+paddle_width = 15
+paddle_height = 80
+paddle_speed = 1
+ball_speed_x = 1
+ball_speed_y = 1
 
 # Krāsas definīcijas
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
+DARKBLUE = (31, 97, 141)
+WHITE = (251 , 252, 252)
 
 # Spēlētāju sākuma pozīcijas
 player1_x = 0
@@ -96,7 +96,7 @@ while True:
         ball_speed_x = -abs(ball_speed_x)
 
     # Zīmējam visus objektus uz ekrāna
-    screen.fill(BLACK)
+    screen.fill(DARKBLUE)
     pygame.draw.rect(screen, WHITE, pygame.Rect(player1_x, player1_y, paddle_width, paddle_height))
     pygame.draw.rect(screen, WHITE, pygame.Rect(player2_x, player2_y, paddle_width, paddle_height))
     pygame.draw.ellipse(screen, WHITE, pygame.Rect(ball_x, ball_y, ball_size, ball_size))
@@ -106,6 +106,4 @@ while True:
 
     # Pārbaudām uzvarētāju
     if player1_score >= 10 or player2_score >= 10:
-        pygame.quit()
-
         sys.exit()
