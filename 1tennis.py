@@ -11,8 +11,8 @@ ball_size = 25
 paddle_width = 15
 paddle_height = 80
 paddle_speed = 0.5
-ball_speed_x = 0.1
-ball_speed_y = 0.1
+ball_speed_x = 0.2
+ball_speed_y = 0.2
 
 
 # Krāsas definīcijas
@@ -42,9 +42,12 @@ pygame.display.set_caption('Galda teniss')
 
 player2_y = field_height / 2 - paddle_height / 2
 
+
+
 def ai_move():
     global player2_y
-    error = random.choice([-1000, 0, 1000])  # Pievienojiet šo rindiņu, lai ģenerētu gadījuma skaitli
+    error = random.choice([-1, 0, 0, 0, 1, 1, 2, 3, 4])  # Pievienojiet šo rindiņu, lai ģenerētu gadījuma skaitli
+    paddle_speed = 0.1
     if player2_y + paddle_height / 2 + error > ball_y + ball_size:
         player2_y -= paddle_speed
     if player2_y + paddle_height / 2 + error < ball_y:
