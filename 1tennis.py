@@ -11,8 +11,8 @@ ball_size = 25
 paddle_width = 15
 paddle_height = 80
 paddle_speed = 0.5
-ball_speed_x = 0.2
-ball_speed_y = 0.2
+ball_speed_x = 0.4
+ball_speed_y = 0.4
 
 
 # Krāsas definīcijas
@@ -43,11 +43,12 @@ pygame.display.set_caption('Galda teniss')
 player2_y = field_height / 2 - paddle_height / 2
 
 
+paddle_speed = 0.5
 
 def ai_move():
     global player2_y
     error = random.choice([-1, 0, 0, 0, 1, 1, 2, 3, 4])  # Pievienojiet šo rindiņu, lai ģenerētu gadījuma skaitli
-    paddle_speed = 0.1
+    paddle_speed = 0.3
     if player2_y + paddle_height / 2 + error > ball_y + ball_size:
         player2_y -= paddle_speed
     if player2_y + paddle_height / 2 + error < ball_y:
@@ -115,9 +116,34 @@ while True:
     pygame.draw.ellipse(screen, WHITE, pygame.Rect(ball_x, ball_y, ball_size, ball_size))
     pygame.draw.aaline(screen, WHITE, (field_width / 2, 0), (field_width / 2, field_height))
     pygame.draw.rect(screen, WHITE, pygame.Rect(0, 0, field_width, field_height), 2)
-    pygame.display.flip()
 
+    # Attēlo rezultātus uz ekrāna
+    font = pygame.font.Font(None, 36)
+    player1_score_text = font.render("Player 1: " + str(player1_score), True, WHITE)
+    player2_score_text = font.render("Player 2: " + str(player2_score), True, WHITE)
+    screen.blit(player1_score_text, (20, 20))
+    screen.blit(player2_score_text, (screen_width - player2_score_text.get_width() - 20, 20))
+
+    pygame.display.flip()
     # Pārbaudām uzvarētāju
+
+
+# Pārbauda uzvarētāju
     if player1_score >= 10 or player2_score >= 10:
+        winner_text = ""
+        if player1_score > player2_score:
+            winner_text = "Player 1 wins!"
+        else:
+            winner_text = "Player 2 wins!"
+
+        font = pygame.font.Font(None, 48)
+        winner_text_render = font.render(winner_text, True, WHITE)
+        winner_text_pos = (screen_width // 2 - winner_text_render.get_width() // 2, screen_height - 100)
+        screen.blit(winner_text_render, winner_text_pos)
+
+        pygame.display.flip()
+
+        pygame.time.wait(3000)  # Uzrāda uzvarētāja tekstu 3 sekundes
+
         pygame.quit()
         sys.exit()
