@@ -1,7 +1,8 @@
 import pygame
 import sys
+import random
 
-# b8
+# Iestatījumi
 screen_width = 640
 screen_height = 480
 field_width = 640
@@ -9,13 +10,14 @@ field_height = 480
 ball_size = 25
 paddle_width = 15
 paddle_height = 80
-paddle_speed = 1
-ball_speed_x = 1
-ball_speed_y = 1
+paddle_speed = 0.5
+ball_speed_x = 0.1
+ball_speed_y = 0.1
+
 
 # Krāsas definīcijas
 DARKBLUE = (31, 97, 141)
-WHITE = (251 , 252, 252)
+WHITE = (251, 252, 252)
 
 # Spēlētāju sākuma pozīcijas
 player1_x = 0
@@ -38,6 +40,18 @@ pygame.init()
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Galda teniss')
 
+player2_y = field_height / 2 - paddle_height / 2
+
+def ai_move():
+    global player2_y
+    error = random.choice([-1000, 0, 1000])  # Pievienojiet šo rindiņu, lai ģenerētu gadījuma skaitli
+    if player2_y + paddle_height / 2 + error > ball_y + ball_size:
+        player2_y -= paddle_speed
+    if player2_y + paddle_height / 2 + error < ball_y:
+        player2_y += paddle_speed
+
+
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -52,11 +66,7 @@ while True:
         # Spēlētājs 1 pārvietojas uz leju
         player1_y += paddle_speed
 
-    # Spēlētājs 2 (labais spēlētājs) seko bumbiņai vertikālajā asī
-    if ball_y + ball_size / 2 < player2_y + paddle_height / 2:
-        player2_y -= paddle_speed
-    if ball_y + ball_size / 2 > player2_y + paddle_height / 2:
-        player2_y += paddle_speed
+    ai_move()  # Izsaukums AI spēlētāja pārvietošanai
 
     # Bumbiņas kustība
     ball_x += ball_speed_x
@@ -106,4 +116,5 @@ while True:
 
     # Pārbaudām uzvarētāju
     if player1_score >= 10 or player2_score >= 10:
+        pygame.quit()
         sys.exit()
