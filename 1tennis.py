@@ -57,9 +57,24 @@ def ai_move():
     if player2_y + paddle_height / 2 + error < ball_y:
         player2_y += paddle_speed
 
+def display_last_results():
+    filename = "rezultati.txt"
+    try:
+        with open(filename, "r") as file:
+            lines = file.readlines()
+            last_results = lines[-5:]  # Izmantojam pēdējās 5 rindas
+            print("Pēdējie rezultāti:")
+            for result in last_results:
+                print(result.strip())
+    except FileNotFoundError:
+        print("Nav iepriekšējo rezultātu.")
+
+
+
 
 
 while True:
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             filename = "rezultati.txt"
@@ -152,7 +167,11 @@ while True:
 
         pygame.display.flip()
 
-        pygame.time.wait(3000)  # Uzrāda uzvarētāja tekstu 3 sekundes
+        pygame.time.wait(3000)
+        display_last_results()
 
         pygame.quit()
         sys.exit()
+
+
+
