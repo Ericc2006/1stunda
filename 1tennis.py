@@ -33,6 +33,9 @@ ball_y = screen_height / 2 - ball_size / 2
 player1_score = 0
 player2_score = 0
 
+player1_name = input("Ievadiet 1. spēlētāja vārdu: ")
+player2_name = "AI"
+
 # Inicializējam pygame
 pygame.init()
 
@@ -59,6 +62,9 @@ def ai_move():
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            filename = "rezultati.txt"
+            with open(filename, "a") as file:
+                file.write(f"{player1_name} {player1_score} - {player2_score} {player2_name}\n")
             pygame.quit()
             sys.exit()
 
@@ -119,8 +125,8 @@ while True:
 
     # Attēlo rezultātus uz ekrāna
     font = pygame.font.Font(None, 36)
-    player1_score_text = font.render("Player 1: " + str(player1_score), True, WHITE)
-    player2_score_text = font.render("Player 2: " + str(player2_score), True, WHITE)
+    player1_score_text = font.render(player1_name + " " + str(player1_score), True, WHITE)
+    player2_score_text = font.render(player2_name + " " + str(player2_score), True, WHITE)
     screen.blit(player1_score_text, (20, 20))
     screen.blit(player2_score_text, (screen_width - player2_score_text.get_width() - 20, 20))
 
@@ -130,11 +136,14 @@ while True:
 
 # Pārbauda uzvarētāju
     if player1_score >= 10 or player2_score >= 10:
+        filename = "rezultati.txt"
+        with open(filename, "a") as file:
+            file.write(f"{player1_name} {player1_score} - {player2_score} {player2_name}\n")
         winner_text = ""
         if player1_score > player2_score:
-            winner_text = "Player 1 wins!"
+            winner_text = player1_name + " wins!"
         else:
-            winner_text = "Player 2 wins!"
+            winner_text = player2_name + " wins!"
 
         font = pygame.font.Font(None, 48)
         winner_text_render = font.render(winner_text, True, WHITE)
