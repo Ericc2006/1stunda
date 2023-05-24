@@ -50,7 +50,7 @@ paddle_speed = 0.5
 
 def ai_move():
     global player2_y
-    error = random.choice([-1, 0, 0, 0, 1, 1, 2, 3, 4])  # Pievienojiet šo rindiņu, lai ģenerētu gadījuma skaitli
+    error = random.choice([-1, 0, 0, 0, 1, 1, 2, 3, 4]) 
     paddle_speed = 0.3
     if player2_y + paddle_height / 2 + error > ball_y + ball_size:
         player2_y -= paddle_speed
@@ -62,7 +62,7 @@ def display_last_results():
     try:
         with open(filename, "r") as file:
             lines = file.readlines()
-            last_results = lines[-5:]  # Izmantojam pēdējās 5 rindas
+            last_results = lines[-5:]  
             print("Pēdējie rezultāti:")
             for result in last_results:
                 print(result.strip())
