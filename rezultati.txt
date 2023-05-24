@@ -5,3 +5,5 @@ sANJA 0 - 0 AI
 Sanja 1 - 0 AI
 Sanja 0 - 0 AI
 Sanja 10 - 3 AI
+Mûrnieks 8 - 2 AI
+snja 1 - 0 AI
