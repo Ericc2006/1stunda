@@ -3,7 +3,7 @@
 import random
 
 # Izveidojam vārdnīcu ar vārdiem.
-dictionary = ["maize", "piens", "siers", "olas", "kartupeļi", "banāni", "apelsīni", "pipari", "burkāni", "mandeles"]
+dictionary = ["maize", "piens", "siers", "olas", "kartupeļi", "banāni", "apelsīni", "pipari", "burkāni", "mandeles", "ābols", ""]
 
 # Izvēlamies gadījuma vārdu no vārdnīcas.
 word = random.choice(dictionary)
