@@ -81,6 +81,7 @@ while True:
             with open(filename, "a") as file:
                 file.write(f"{player1_name} {player1_score} - {player2_score} {player2_name}\n")
             pygame.quit()
+            display_last_results()
             sys.exit()
 
     keys = pygame.key.get_pressed()

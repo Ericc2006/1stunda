@@ -7,3 +7,6 @@ Sanja 0 - 0 AI
 Sanja 10 - 3 AI
 Mûrnieks 8 - 2 AI
 snja 1 - 0 AI
+rainers 1 - 2 AI
+raines 0 - 1 AI
+rainers 0 - 0 AI
